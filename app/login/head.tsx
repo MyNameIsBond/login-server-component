@@ -1,7 +1,7 @@
 export default function Head({}) {
   return (
     <>
-      <title>Register | The Happy Programmer</title>
+      <title>Login | The Happy Programmer</title>
     </>
   );
 }

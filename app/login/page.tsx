@@ -1,8 +1,12 @@
+import Link from 'next/link';
+import MyForm from '../../components/MyForm';
+
 export default function Home() {
   return (
     <div>
       <main>
-        <h1>register</h1>
+        <Link href='/register'>register</Link>
+        <MyForm />
       </main>
     </div>
   );
