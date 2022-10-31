@@ -1,16 +1,16 @@
+import { ReactNode } from 'react';
+import Footer from '../components/Home/Footer'
 import Nav from '../components/Home/Nav'
 import './global.css';
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
+export default function AppLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en' className='bg-gray-100'>
-      <Nav />
-      <body >
+      <body>
+        <Nav />
         {children}
+      <Footer/>
       </body>
-      <footer className='py-10'>
-        <p className='text-blue-500'>Footer</p>
-      </footer>
     </html>
   );
 }
