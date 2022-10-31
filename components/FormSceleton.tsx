@@ -6,10 +6,11 @@ interface FormSceletonProps {
 
 export default function FormSceleton({children, action, method} : FormSceletonProps) : JSX.Element {
   return (
-    <form
-    action={action}
-    method={method}
-    className='flex flex-col max-w-md gap-y-4 w-96'
-  >{children}</form>
+        <form
+        action={action}
+        method={method}
+        className='flex flex-col max-w-md gap-y-4 w-96'>
+        {children}
+        </form>
   );
 }

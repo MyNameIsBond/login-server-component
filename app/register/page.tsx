@@ -1,12 +1,11 @@
-import Link from 'next/link';
+import MyHeader from "../../components/MyHeader"
+import RegisterForm from "../../components/RegisterForm"
 
-export default function Home() {
+export default function Login() {
   return (
-    <div>
-      <main>
-        <Link href='/login'>Login</Link>
-        <h1>register</h1>
+      <main className='flex flex-col items-center pt-52 gap-y-10 w-full h-screen'>
+        <MyHeader title='Register With Us' subtitle='enter your credentials to register'/>
+        <RegisterForm />
       </main>
-    </div>
   );
 }
