@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <div>
       <main>
-        <Link href='/register'>Register</Link>
+        <Link href='/register' className='underline text-blue-500'>Register</Link>
         <br />
-        <Link href='/login'>Login</Link>
+        <Link href='/login' className='underline text-blue-500'>Login</Link>
         <h1>home</h1>
       </main>
     </div>

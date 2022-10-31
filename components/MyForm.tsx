@@ -1,18 +1,21 @@
-export default function MyForm() {
+import AlreadyUser from "./AlreadyUser"
+import MyButton from "./MyButton"
+import MyInput from "./MyInput"
+import RememberMe from "./RememberMe"
+
+export default function MyForm({}) : JSX.Element {
   return (
     <form
       action='/api/login'
       method='post'
-      className='flex flex-col max-w-md gap-y-4'
+      className='flex flex-col max-w-md gap-y-4 w-96'
     >
-      <input className='border' type='text' name='username' />
-      <input type='password' className='border' name='password' />
-      <button
-        className='bg-gray-900 bg-opacity-95 font-medium hover:bg-opacity-100 text-gray-200 py-3 rounded-lg'
-        type='submit'
-      >
-        Submit
-      </button>
+      <MyInput name='email' type='email' placeholder='example@mail.com' label='Email' />
+      <MyInput name='password' type='password' placeholder='password' label='password' />
+      <RememberMe />
+      <MyButton type='submit' dark={true}>Log in</MyButton>
+      <MyButton type='submit' dark={false}>Log in with GitHub</MyButton>
+      <AlreadyUser text="You are not a member?" hreftext="sign up" href="/register" />
     </form>
   );
 }
