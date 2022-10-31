@@ -7,7 +7,7 @@ export default function RememberMe({}) : JSX.Element {
         <input type='checkbox' id='remember-me' name='remember-me' />
         <label htmlFor='remember-me' className="text-gray-900 text-opacity-60 font-normal">Remember me</label>
         </div>
-        <Link href='/forgot-password' className="hover:underline font-semibold">Forgot Password</Link>
+        <Link href='/forgot-password' className="hover:underline font-medium">Forgot Password</Link>
         </div>
     );
 }
