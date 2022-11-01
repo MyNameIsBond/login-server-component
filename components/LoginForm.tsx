@@ -18,6 +18,7 @@ export default function MyForm({}): JSX.Element {
         type="password"
         placeholder="password"
         label="password"
+        minLength={8}
       />
       <RememberMe />
       <MyButton type="submit" dark={true}>

@@ -10,6 +10,7 @@ export default function MyForm({}): JSX.Element {
         type="username"
         placeholder="username"
         label="username"
+        minLength={6}
       />
       <MyInput
         name="email"
@@ -22,6 +23,7 @@ export default function MyForm({}): JSX.Element {
         type="password"
         placeholder="password"
         label="password"
+        minLength={8}
       />
       <MyButton type="submit" dark={true}>
         Register
