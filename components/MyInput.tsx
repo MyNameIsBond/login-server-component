@@ -1,4 +1,4 @@
-interface MyInputProps {
+interface MyInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   type: string;
   placeholder: string;

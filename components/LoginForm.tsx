@@ -19,6 +19,8 @@ export default function MyForm({}): JSX.Element {
         placeholder="password"
         label="password"
         minLength={8}
+        pattern="[a-z0-9]{1,15}"
+        title="Password should be digits (0 to 9) or alphabets (a to z)."
       />
       <RememberMe />
       <MyButton type="submit" dark={true}>
