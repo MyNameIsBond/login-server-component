@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Nav() {
   return (
@@ -16,14 +16,14 @@ export default function Nav() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            stroke-width="2"
+            strokeWidth="2"
             height="16"
             width="16"
             className="stroke-current text-gray-500 group-hover:text-gray-600 dark:text-gray-500 dark:group-hover:text-gray-50"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"
             ></path>
           </svg>
