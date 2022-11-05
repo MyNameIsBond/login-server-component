@@ -1,12 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { supabase } from '../../utils/supabase';
+import { supabase } from '../../utils/supabaseclient';
 type Data = {
   error: string;
 };
-
-interface Error {
-  message: string;
-}
 
 export default async function handler(
   req: NextApiRequest,
@@ -14,10 +10,9 @@ export default async function handler(
 ) {
   if (req.method === 'POST') {
     try {
-      const { email, password } = req.body;
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { email } = req.body;
+      const { data, error } = await supabase.auth.signInWithOtp({
         email,
-        password,
       });
       console.log('data, error', data, error);
       // ...log in the user

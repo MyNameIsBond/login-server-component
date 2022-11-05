@@ -2,8 +2,18 @@ import AlreadyUser from './AlreadyUser';
 import FormSceleton from './FormSceleton';
 import MyButton from './MyButton';
 import MyInput from './MyInput';
-import RememberMe from './RememberMe';
 import Image from 'next/image';
+
+const OrDivider = ({ title }: { title: string }) => (
+  <div className="flex items-center">
+    <div className="mr-3 flex-grow border-t border-gray-900 border-opacity-5 dark:border-gray-50"></div>
+    <div className="text-gray-900 text-opacity-25 dark:text-gray-50">
+      {title}
+    </div>
+    <div className="ml-3 flex-grow border-t border-gray-900 border-opacity-5 dark:border-gray-50"></div>
+  </div>
+);
+
 export default function MyForm({}): JSX.Element {
   return (
     <FormSceleton action="/api/login" method="post">
@@ -13,19 +23,10 @@ export default function MyForm({}): JSX.Element {
         placeholder="example@mail.com"
         label="Email"
       />
-      <MyInput
-        name="password"
-        type="password"
-        placeholder="password"
-        label="password"
-        minLength={8}
-        pattern="[a-z0-9]{1,15}"
-        title="Password should be digits (0 to 9) or alphabets (a to z)."
-      />
-      <RememberMe />
       <MyButton type="submit" dark={true}>
-        Log in
+        Send me the magic link
       </MyButton>
+      <OrDivider title="or" />
       <MyButton type="submit" dark={false}>
         <Image src="/github.svg" alt="github" width={20} height={20} />
         Log in with GitHub

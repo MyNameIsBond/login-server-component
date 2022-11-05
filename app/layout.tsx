@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
-import Footer from "../components/Home/Footer";
-import Nav from "../components/Home/Nav";
-import "./global.css";
+import { ReactNode } from 'react';
+import Footer from '../components/Home/Footer';
+import Nav from '../components/Home/Nav';
+import './global.css';
 
 export default function AppLayout({ children }: { children: ReactNode }) {
   return (
