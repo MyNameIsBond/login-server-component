@@ -4,21 +4,16 @@ import { supabase } from '../../utils/supabaseclient';
 interface LoginProps {
   children: ReactNode;
 }
-const mynotes = async () => {
-  const { data: notes, error } = await supabase.from('notes').select('id');
-  console.log('noteds', notes);
-  return { notes, error };
-};
 
 export default async function LoginLayout({ children }: LoginProps) {
-  const { notes, error } = mynotes();
+  const { data: notes, error } = await supabase.from('notes').select('*');
 
   return (
     <section className="flex flex-row">
-      <div className="flex flex-col">
+      <div className="flex flex-col bg-gray-200 dark:bg-gray-900">
         {error && <div>{error?.message}</div>}
         {notes?.map((note) => (
-          <p>{note.id}</p>
+          <p>{note.title}</p>
         ))}
       </div>
       {children}
