@@ -29,7 +29,7 @@ export default function Nav() {
           </svg>
         </div>
         <input
-          className="focus:outline-none rounded-full border border-gray-900 border-opacity-10 dark:border-opacity-10 py-2 pl-10 pr-3 text-sm text-gray-900 focus:border-gray-700 group-hover:border-gray-600 dark:border-gray-50 dark:bg-gray-900 dark:text-gray-50 dark:group-hover:border-gray-50"
+          className="focus:outline-none rounded-full border border-gray-900 border-opacity-10 dark:border-opacity-10 py-2 pl-10 pr-3 text-sm text-gray-900 focus:border-gray-900 group-hover:border-gray-600 dark:border-gray-50 dark:bg-gray-900 dark:text-gray-50 dark:group-hover:border-gray-50 focus:ring focus:ring-gray-900 focus:ring-opacity-10"
           type="search"
           id="site-search"
           name="q"
