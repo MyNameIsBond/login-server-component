@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 export default function Nav() {
   return (
-    <nav className="flex items-center content-center justify-between w-full px-10 py-5 bg-white dark:bg-black shadow-md">
+    <nav className="flex items-center content-center justify-between w-full px-10 py-5 bg-white dark:bg-neutral-900 border-b dark:border-neutral-50 dark:border-opacity-10">
       <Link
         href="/"
-        className="text-2xl font-semibold dark:text-gray-200 text-gray-800"
+        className="text-2xl font-semibold dark:text-neutral-200 text-gray-800"
       >
         The Happy Notes
       </Link>
@@ -19,7 +19,7 @@ export default function Nav() {
             strokeWidth="2"
             height="16"
             width="16"
-            className="stroke-current text-gray-500 group-hover:text-gray-600 dark:text-gray-500 dark:group-hover:text-gray-50"
+            className="stroke-current text-gray-500 group-hover:text-gray-600 dark:text-neutral-500 dark:group-hover:text-neutral-50"
           >
             <path
               strokeLinecap="round"
@@ -29,7 +29,7 @@ export default function Nav() {
           </svg>
         </div>
         <input
-          className="focus:outline-none rounded-full border border-gray-900 border-opacity-10 dark:border-opacity-10 py-2 pl-10 pr-3 text-sm text-gray-900 focus:border-gray-900 group-hover:border-gray-600 dark:border-gray-50 dark:bg-gray-900 dark:text-gray-50 dark:group-hover:border-gray-50 focus:ring focus:ring-gray-900 focus:ring-opacity-10"
+          className="focus:outline-none rounded-full border border-gray-900 border-opacity-10 dark:border-opacity-10 py-2 pl-10 pr-3 text-sm text-gray-900 focus:border-gray-900 group-hover:border-gray-600 dark:border-neutral-50 dark:bg-neutral-900 dark:text-neutral-50 dark:group-hover:border-gray-50 focus:ring focus:ring-gray-900 focus:ring-opacity-10"
           type="search"
           id="site-search"
           name="q"
@@ -37,7 +37,7 @@ export default function Nav() {
         />
       </div>
       <div className="flex items-center gap-x-4">
-        <Link className="dark:text-gray-50 text-gray-800" href="/login">
+        <Link className="dark:text-neutral-50 text-gray-800" href="/login">
           Login
         </Link>
         <Link

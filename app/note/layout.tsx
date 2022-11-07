@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import Note from '../../components/notes/Note';
 import { supabase } from '../../utils/supabaseclient';
 
 interface LoginProps {
@@ -10,10 +11,9 @@ export default async function LoginLayout({ children }: LoginProps) {
 
   return (
     <section className="flex flex-row">
-      <div className="flex flex-col bg-gray-200 dark:bg-gray-900">
-        {error && <div>{error?.message}</div>}
+      <div className="flex flex-col gap-y-5 border-r dark:border-neutral-50 dark:border-opacity-10 bg-gray-200 dark:bg-neutral-900 dark:text-neutral-100">
         {notes?.map((note) => (
-          <p>{note.title}</p>
+          <Note key={note.id} {...note} />
         ))}
       </div>
       {children}

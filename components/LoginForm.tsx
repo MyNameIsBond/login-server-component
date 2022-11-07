@@ -6,11 +6,11 @@ import Image from 'next/image';
 
 const OrDivider = ({ title }: { title: string }) => (
   <div className="flex items-center">
-    <div className="mr-3 flex-grow border-t border-gray-900 border-opacity-5 dark:border-gray-50"></div>
-    <div className="text-gray-900 text-opacity-25 dark:text-gray-50">
+    <div className="mr-3 flex-grow border-t border-gray-900 border-opacity-5 dark:border-neutral-50"></div>
+    <div className="text-gray-900 text-opacity-25 dark:text-neutral-50">
       {title}
     </div>
-    <div className="ml-3 flex-grow border-t border-gray-900 border-opacity-5 dark:border-gray-50"></div>
+    <div className="ml-3 flex-grow border-t border-gray-900 border-opacity-5 dark:border-neutral-50"></div>
   </div>
 );
 
