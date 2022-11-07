@@ -24,7 +24,7 @@ export default function Note({
       <div className="flex flex-row justify-between">
         <Link
           href={`/note/${id}`}
-          className="font-medium overflow-hidden truncate text-ellipsis max-w-xs"
+          className="overflow-hidden truncate text-ellipsis max-w-xs"
         >
           {title}
         </Link>
