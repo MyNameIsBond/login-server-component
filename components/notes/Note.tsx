@@ -20,17 +20,17 @@ export default function Note({
 }: NoteProps): JSX.Element {
   const [open, setOpen] = useState<boolean>(false);
   return (
-    <div className="dark:bg-neutral-800 rounded-3xl border dark:border-neutral-50 dark:border-opacity-10 p-5">
+    <div className="dark:bg-neutral-800 rounded-3xl border bg-gray-100 dark:border-neutral-50 dark:border-opacity-10 py-2 px-5 max-w-[18rem]">
       <div className="flex flex-row justify-between">
         <Link
           href={`/note/${id}`}
-          className="overflow-hidden truncate text-ellipsis max-w-xs"
+          className="overflow-hidden truncate text-ellipsis max-w-xs text-sm flex items-center"
         >
           {title}
         </Link>
         <div
-          onClick={() => setOpen(!open)}
-          className="bg-neutral-50 dark:bg-opacity-10 p-2 flex items-center rounded-full mx-4"
+          onClick={(e) => setOpen(!open)}
+          className="dark:bg-neutral-50 dark:bg-opacity-10 bg-opacity-10 bg-gray-900 p-2 flex items-center rounded-full ml-2"
         >
           <div
             className={
@@ -42,7 +42,7 @@ export default function Note({
         </div>
       </div>
       {open && (
-        <p className="pt-4 dark:text-neutral-50 dark:text-opacity-60 overflow-hidden truncate text-ellipsis">
+        <p className="pt-4 dark:text-neutral-50 dark:text-opacity-60 overflow-hidden truncate text-ellipsis text-sm font-light">
           {data}
         </p>
       )}
