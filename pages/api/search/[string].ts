@@ -14,7 +14,7 @@ export default async function handler(
         .select('title, data')
         .eq('title', 'new');
       // TODO: add note TS type
-      console.log(string, notes);
+      console.log('THIS IS SPARTA', string, notes);
       res.status(200).json(notes);
     }
   } catch (error) {

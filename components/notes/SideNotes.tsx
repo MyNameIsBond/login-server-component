@@ -1,19 +1,18 @@
 import { use } from 'react';
+import { queryClient } from '../../utils/query/search';
 import Note from './Note';
 
 async function getAllNotes(): Promise<Note[]> {
   const notes = await fetch('http://localhost:3000/api/notes');
-  console.log('NOTES:', notes);
   return notes.json();
 }
 const dataPromise = getAllNotes();
 
-async function getSearchNotes(string): Promise<Note[]> {
-  const notes = await fetch(`${process.env.BASE_API_URL}/search/${string}`);
-  console.log('NOTES:', notes);
-  return notes.json();
+async function getSearchNotes(search: string) {
+  const notes = await fetch(`${process.env.BASE_API_URL}/search/${search}`);
+  return await notes.json();
 }
-const allPromise = (search) => getSearchNotes(search);
+const allPromise = (search: string) => getSearchNotes(search);
 
 function Itteration({ notes }) {
   return (
@@ -27,10 +26,17 @@ function Itteration({ notes }) {
 
 export default function SideNotes({ search }: { search: string }) {
   if (typeof search === 'string' && search.length === 0) {
-    const notes = use(dataPromise);
+    const notes = queryClient('notes', () =>
+      fetch('http://localhost:3000/api/notes').then((res) => res.json())
+    );
     return <Itteration notes={notes} />;
   } else {
-    const notes = use(allPromise(search));
+    const notes = queryClient('search', () =>
+      fetch(`${process.env.BASE_API_URL}/search/${search}`).then((res) =>
+        res.json()
+      )
+    );
+    console.log('DOLORES:', `${process.env.BASE_API_URL}/search/${search}`);
     return <Itteration notes={notes} />;
   }
 }
