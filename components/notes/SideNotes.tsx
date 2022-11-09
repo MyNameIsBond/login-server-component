@@ -26,14 +26,19 @@ function Itteration({ notes }) {
 
 export default function SideNotes({ search }: { search: string }) {
   if (typeof search === 'string' && search.length === 0) {
-    const notes = queryClient('notes', () =>
-      fetch('http://localhost:3000/api/notes').then((res) => res.json())
+    const notes = use(
+      queryClient('notes', () =>
+        fetch('http://localhost:3000/api/notes').then((res) => res.json())
+      )
     );
-    return <Itteration notes={notes} />;
+    console.log('FROM:', notes);
+    return <Itteration notes={notes} fallback={<p>Loading feed...</p>} />;
   } else {
-    const notes = queryClient('search', () =>
-      fetch(`${process.env.BASE_API_URL}/search/${search}`).then((res) =>
-        res.json()
+    const notes = use(
+      queryClient('search', () =>
+        fetch(`http://localhost:3000/api/search/${search}`).then((res) =>
+          res.json()
+        )
       )
     );
     console.log('DOLORES:', `${process.env.BASE_API_URL}/search/${search}`);
