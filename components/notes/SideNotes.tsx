@@ -32,7 +32,7 @@ export default function SideNotes({ search }: { search: string }) {
       )
     );
     console.log('FROM:', notes);
-    return <Itteration notes={notes} fallback={<p>Loading feed...</p>} />;
+    return <Itteration notes={notes} />;
   } else {
     const notes = use(
       queryClient('search', () =>
