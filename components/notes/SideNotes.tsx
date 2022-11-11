@@ -31,7 +31,6 @@ export default function SideNotes({ search }: { search: string }) {
         fetch('http://localhost:3000/api/notes').then((res) => res.json())
       )
     );
-    console.log('FROM:', notes);
     return <Itteration notes={notes} />;
   } else {
     const notes = use(
