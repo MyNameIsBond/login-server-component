@@ -17,7 +17,9 @@ export default function SearchNotes({ search }: { search: string }) {
 
   if (notes?.length === 0) {
     return (
-      <div className="m-auto max-w-xs">Nothing for search "{search}" </div>
+      <div className="m-auto max-w-[18rem] min-w-full">
+        Nothing for search "{search}"{' '}
+      </div>
     );
   }
 

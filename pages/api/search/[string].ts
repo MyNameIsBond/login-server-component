@@ -12,9 +12,7 @@ export default async function handler(
       const { data: notes, error } = await supabase
         .from('notes')
         .select('title, data')
-        .eq('title', 'new');
-      // TODO: add note TS type
-      console.log('THIS IS SPARTA', string, notes);
+        .eq('title', string);
       res.status(200).json(notes);
     }
   } catch (error) {
