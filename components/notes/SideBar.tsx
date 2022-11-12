@@ -11,7 +11,7 @@ export default function SideBar({}: {}) {
       <div className="border-b border-gray-900 dark:border-gray-50 dark:border-opacity-10 border-opacity-10 p-5 flex">
         <Search search={search} setSearch={setSearch} />
       </div>
-      <SideNotes search={search} />
+      {search ? <p>searching...</p> : <SideNotes search={search} />}
     </div>
   );
 }

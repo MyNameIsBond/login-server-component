@@ -1,46 +1,20 @@
 import { use } from 'react';
-import { queryClient } from '../../utils/query/search';
 import Note from './Note';
 
-async function getAllNotes(): Promise<Note[]> {
-  const notes = await fetch('http://localhost:3000/api/notes');
-  return notes.json();
-}
-const dataPromise = getAllNotes();
+const fetcher = async () => {
+  const data = await fetch('http://localhost:3000/api/notes');
+  return await data.json();
+};
 
-async function getSearchNotes(search: string) {
-  const notes = await fetch(`${process.env.BASE_API_URL}/search/${search}`);
-  return await notes.json();
-}
-const allPromise = (search: string) => getSearchNotes(search);
+const datafech = fetcher();
 
-function Itteration({ notes }) {
+export default function SideNotes({ search }: { search: string }) {
+  const notes = use(datafech);
   return (
-    <div className="p-5 flex flex-col gap-y-3">
-      {notes?.map((note) => (
+    <div className="p-5 flex flex-col gap-y-5">
+      {notes?.map((note: any) => (
         <Note key={note.id} {...note} />
       ))}
     </div>
   );
-}
-
-export default function SideNotes({ search }: { search: string }) {
-  if (typeof search === 'string' && search.length === 0) {
-    const notes = use(
-      queryClient('notes', () =>
-        fetch('http://localhost:3000/api/notes').then((res) => res.json())
-      )
-    );
-    return <Itteration notes={notes} />;
-  } else {
-    const notes = use(
-      queryClient('search', () =>
-        fetch(`http://localhost:3000/api/search/${search}`).then((res) =>
-          res.json()
-        )
-      )
-    );
-    console.log('DOLORES:', `${process.env.BASE_API_URL}/search/${search}`);
-    return <Itteration notes={notes} />;
-  }
 }
