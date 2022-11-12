@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import SideNotes from './SideNotes';
 import Search from './Search';
+import SearchNotes from './SearchNotes';
 
 export default function SideBar({}: {}) {
   const [search, setSearch] = useState<string>('');
@@ -11,7 +12,7 @@ export default function SideBar({}: {}) {
       <div className="border-b border-gray-900 dark:border-gray-50 dark:border-opacity-10 border-opacity-10 p-5 flex">
         <Search search={search} setSearch={setSearch} />
       </div>
-      {search ? <p>searching...</p> : <SideNotes search={search} />}
+      {search ? <SearchNotes search={search} /> : <SideNotes search={search} />}
     </div>
   );
 }
