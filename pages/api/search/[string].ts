@@ -9,11 +9,20 @@ export default async function handler(
 
   try {
     if (req.method === 'GET') {
-      const { data: notes, error } = await supabase
+      const {
+        data: notes,
+        error,
+        status,
+        statusText,
+      } = await supabase
         .from('notes')
-        .select('title, data')
-        .eq('title', string);
-      res.status(200).json(notes);
+        .select('*')
+        .textSearch('title', string as string);
+      if (status === 400) {
+        res.status(200).json({ error: statusText });
+      } else {
+        res.status(200).json(notes);
+      }
     }
   } catch (error) {
     console.error(error);

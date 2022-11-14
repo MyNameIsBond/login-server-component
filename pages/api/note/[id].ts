@@ -14,6 +14,7 @@ export default async function handler(
         .select('*')
         .eq('id', id);
       // TODO: add note TS type
+      console.log('NOTE FROM ID', note);
       res.status(200).json(note);
     }
   } catch (error) {

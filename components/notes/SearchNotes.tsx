@@ -3,13 +3,18 @@ import { use, useState, useEffect } from 'react';
 import Note from './Note';
 
 export default function SearchNotes({ search }: { search: string }) {
-  const [notes, setNotes] = useState<any[]>();
+  const [notes, setNotes] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(`/api/search/${search}`);
       const newData = await response.json();
-      setNotes(newData);
+      if (newData.error) {
+        console.log('NEWDATA:', newData.error);
+        setNotes([]);
+      } else {
+        setNotes(newData);
+      }
     };
 
     fetchData();
