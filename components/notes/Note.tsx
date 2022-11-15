@@ -20,7 +20,7 @@ export default function Note({
 }: NoteProps): JSX.Element {
   const [open, setOpen] = useState<boolean>(false);
   return (
-    <div className="dark:bg-neutral-800 rounded-3xl border bg-gray-100 dark:border-neutral-50 dark:border-opacity-10 py-2 px-5 max-w-[18rem]">
+    <div className="dark:bg-neutral-800 rounded-3xl border bg-gray-100 dark:border-neutral-50 dark:border-opacity-10 py-2 px-5 max-w-[18rem] group">
       <div className="flex flex-row justify-between">
         <Link
           href={`/note/${id}`}
@@ -28,16 +28,18 @@ export default function Note({
         >
           {title}
         </Link>
-        <div
-          onClick={(e) => setOpen(!open)}
-          className="dark:bg-neutral-50 dark:bg-opacity-10 bg-opacity-10 bg-gray-900 p-2 flex items-center rounded-full ml-2"
-        >
+        <div className="invisible group-hover:visible transition-transform">
           <div
-            className={
-              open ? 'rotate-180 transition-transform' : 'transition-transform'
-            }
+            onClick={(e) => setOpen(!open)}
+            className="dark:bg-neutral-50 dark:bg-opacity-10 bg-opacity-10 bg-gray-900 p-2 flex items-center rounded-full ml-2"
           >
-            <Arrow />
+            <div
+              className={`
+            ${open ? 'rotate-180 ' : null}
+            transition-transform`}
+            >
+              <Arrow />
+            </div>
           </div>
         </div>
       </div>

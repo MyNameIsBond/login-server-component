@@ -1,10 +1,9 @@
 'use client';
 import { useUser } from '@supabase/auth-helpers-react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function Nav() {
-  const { isLoading, user } = useUser();
-  console.log('user', user);
   return (
     <nav className="flex items-center content-center justify-between w-full px-10 py-5 bg-gray-50 dark:bg-neutral-900 border-b dark:border-neutral-50 dark:border-opacity-10">
       <Link
