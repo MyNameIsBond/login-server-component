@@ -15,12 +15,16 @@ export default function SearchNotes({ params }: { params: { id: string } }) {
   const { title, data, created_at, content } = res;
 
   return (
-    <div className="py-5 px-10 dark:bg-neutral-900 bg-gray-100 w-full">
-      <h1 className="font-semibold text-3xl capitalize py-4">{title}</h1>
-      <div
-        className="prose-sm prose-invert max-w-md"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+    <div className="py-5 px-10 dark:bg-neutral-900  bg-gray-100  w-full">
+      <h1 className="font-semibold text-3xl capitalize py-4 dark:text-neutral-50">
+        {title}
+      </h1>
+      <div className="sticky overflow-y-scroll top-0">
+        <div
+          className="prose-sm dark:prose-invert prose max-w-md"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      </div>
     </div>
   );
 }

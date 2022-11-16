@@ -8,10 +8,8 @@ export default function AppLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="bg-gray-100 overflow-y-auto">
       <body>
-        <Providers>
-          <Nav />
-          {children}
-        </Providers>
+        <Nav />
+        {children}
         <Footer />
       </body>
     </html>

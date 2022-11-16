@@ -7,7 +7,7 @@ interface LoginProps {
 
 export default async function LoginLayout({ children }: LoginProps) {
   return (
-    <section className="flex flex-row h-screen sticky top-10">
+    <section className="flex flex-row">
       <SideBar />
       {children}
     </section>
