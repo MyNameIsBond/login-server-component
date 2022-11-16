@@ -1,7 +1,5 @@
 'use client';
-import { useUser } from '@supabase/auth-helpers-react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 export default function Nav() {
   return (

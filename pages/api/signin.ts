@@ -14,7 +14,6 @@ export default async function handler(
       const { data, error } = await supabase.auth.signInWithOtp({
         email,
       });
-      console.log('data, error', data, error);
       // ...log in the user
     } catch (error) {
       res.status(500).json({ error: error.message });

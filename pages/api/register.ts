@@ -10,7 +10,6 @@ export default function handler(
 ) {
   if (req.method === 'POST') {
     // Process a POST request
-    console.log('BODY:', req.body);
     res.status(200).redirect('/');
   } else {
     // Handle any other HTTP method

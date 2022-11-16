@@ -6,7 +6,7 @@ import { Providers } from './providers';
 
 export default function AppLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="bg-gray-100">
+    <html lang="en" className="bg-gray-100 overflow-y-auto">
       <body>
         <Providers>
           <Nav />

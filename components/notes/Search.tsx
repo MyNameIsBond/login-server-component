@@ -25,6 +25,7 @@ export default function Search({ search, setSearch }: SearchProps) {
         </svg>
       </div>
       <input
+        maxLength={60}
         className="w-full focus:outline-none rounded-full border border-gray-900 border-opacity-10 dark:border-opacity-10 py-2 pl-10 pr-3 text-sm text-gray-900 focus:border-gray-900 group-hover:border-gray-600 dark:border-neutral-50 dark:bg-neutral-900 dark:text-neutral-50 dark:group-hover:border-gray-50 focus:ring focus:ring-gray-900 focus:ring-opacity-10"
         type="search"
         id="site-search"

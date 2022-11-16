@@ -10,7 +10,6 @@ export default function SearchNotes({ search }: { search: string }) {
       const response = await fetch(`/api/search/${search}`);
       const newData = await response.json();
       if (newData.error) {
-        console.log('NEWDATA:', newData.error);
         setNotes([]);
       } else {
         setNotes(newData);

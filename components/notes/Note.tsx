@@ -28,7 +28,7 @@ export default function Note({
         >
           {title}
         </Link>
-        <div className="invisible group-hover:visible transition-transform">
+        <div className="invisible group-hover:visible transition-transform cursor-pointer">
           <div
             onClick={(e) => setOpen(!open)}
             className="dark:bg-neutral-50 dark:bg-opacity-10 bg-opacity-10 bg-gray-900 p-2 flex items-center rounded-full ml-2"

@@ -1,19 +1,26 @@
 import { use } from 'react';
+import { textToRemark } from '../../../utils/textToRemark';
 
 const fetchNote = async (id: string) => {
   const response = await fetch(`http://localhost:3000/api/note/${id}`);
-  const data = await response.json();
-  return data;
+  const res = await response.json();
+  const { title, data, created_at } = res[0];
+  const content = await textToRemark(data);
+  return { title, data, created_at, content };
 };
 
 export default function SearchNotes({ params }: { params: { id: string } }) {
   const { id } = params;
   const res = use(fetchNote(id));
-  const { title, data, created_at } = res[0];
+  const { title, data, created_at, content } = res;
+
   return (
-    <div className="p-3 dark:bg-neutral-900">
-      <h1>{title}</h1>
-      <p>{data}</p>
+    <div className="py-5 px-10 dark:bg-neutral-900 bg-gray-100 w-full">
+      <h1 className="font-semibold text-3xl capitalize py-4">{title}</h1>
+      <div
+        className="prose-sm prose-invert max-w-md"
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
     </div>
   );
 }
