@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import Footer from '../components/Home/Footer';
 import Nav from '../components/Home/Nav';
 import './global.css';
 
