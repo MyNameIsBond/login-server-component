@@ -14,7 +14,10 @@ export default async function handler(
         .delete()
         .eq('id', id);
       console.log(data);
-      res.status(200).json(data);
+      res
+        .status(200)
+        .redirect('/note')
+        .json(data as []);
     }
   } catch (error) {
     console.error(error);
