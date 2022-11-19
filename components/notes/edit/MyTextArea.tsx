@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 import MdPreview from './MdPreview';
 
-export default function MyTextArea({ data }: { data: string }) {
-  const [value, setValue] = useState<string>(data);
+export default function MyTextArea({ data }: { data?: string }) {
+  const [value, setValue] = useState<string>(data || '');
 
   useEffect(() => {}, [value]);
 
