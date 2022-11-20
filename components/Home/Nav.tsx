@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import AddNtn from './AddNtn';
+import AddBtn from './AddBtn';
 
 export default function Nav() {
   return (
@@ -13,10 +13,10 @@ export default function Nav() {
       </Link>
       <div className="flex items-center gap-x-4">
         <Link
-          className="dark:bg-gray-50 rounded-md dark:bg-opacity-5 hover:bg-opacity-20"
+          className="dark:bg-gray-50 bg-gray-900 rounded-md bg-opacity-5 dark:bg-opacity-5 hover:bg-opacity-20"
           href={'/note/add'}
         >
-          <AddNtn />
+          <AddBtn />
         </Link>
       </div>
     </nav>
