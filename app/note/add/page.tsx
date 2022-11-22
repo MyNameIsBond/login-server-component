@@ -1,12 +1,14 @@
 import MyTextArea from '../../../components/notes/edit/MyTextArea';
-const defaultData = ` 
-# H1
+const defaultData = `# H1
 ## H2
 ### H3
-Bold	**bold text**
-Italic	*italicized text*
+Bold	
+**bold text**
+Italic	
+*italicized text*
 
-Blockquote 	> block quoted
+Blockquote 	
+> block quoted
 
 Ordered List	
 1. First item

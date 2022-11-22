@@ -1,5 +1,7 @@
 'use client';
 import Link from 'next/link';
+import { useSelectedLayoutSegment } from 'next/navigation';
+
 import AddBtn from './AddBtn';
 
 export default function Nav() {
