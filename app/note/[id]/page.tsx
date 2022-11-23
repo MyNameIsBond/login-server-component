@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { use } from 'react';
 import DeleteBtn from '../../../components/notes/DeleteBtn';
+import EditBtn from '../../../components/notes/EditBtn';
 import { textToRemark } from '../../../utils/textToRemark';
 
 const fetchNote = async (id: string) => {
@@ -17,28 +18,30 @@ export default function SearchNotes({ params }: { params: { id: string } }) {
   const { title, data, created_at, content } = res;
 
   return (
-    <div className="py-5 px-10 dark:bg-neutral-900  bg-gray-100  w-full">
-      <div className="">
-        <div className="flex flex-row gap-x-3">
+    <div className="float-right">
+      <div className="bg-gray-50">
+        <div className="flex flex-row gap-x-3 w-full">
           <Link
-            className="border-2 border-blue-500 hover:bg-blue-500 hover:text-gray-50 text-blue-500 py-1 px-4 rounded-full"
+            className="dark:bg-gray-50 bg-gray-900 rounded-md bg-opacity-5 dark:bg-opacity-5 hover:bg-opacity-20 cursor-pointer p-2"
             href={`/note/edit/${id}`}
           >
-            Edit
+            <EditBtn />
           </Link>
           <DeleteBtn id={id} />
         </div>
       </div>
-      <div className="flex flex-row justify-between my-8">
-        <h1 className="font-semibold text-3xl capitalize dark:text-neutral-50">
-          {title}
-        </h1>
-      </div>
-      <div className="sticky overflow-y-scroll top-0">
-        <div
-          className="prose-sm dark:prose-invert prose max-w-md"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+      <div className="py-5 px-10 dark:bg-neutral-900 bg-gray-100 float-right">
+        <div className="flex flex-row justify-between my-8">
+          <h1 className="font-semibold text-3xl capitalize dark:text-neutral-50">
+            {title}
+          </h1>
+        </div>
+        <div className="sticky overflow-y-scroll top-0">
+          <div
+            className="prose-sm dark:prose-invert prose max-w-md"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        </div>
       </div>
     </div>
   );

@@ -2,16 +2,19 @@ export default function EditBtn({}: {}): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      className="w-6 h-6"
+      width="15"
+      height="15.115"
+      viewBox="0 0 15 15.115"
     >
       <path
+        id="Path_909"
+        d="M13.35,3.92l1.26-1.26a1.4,1.4,0,0,1,1.98,1.98L8.661,12.569a3.36,3.36,0,0,1-1.416.844l-2,.6.6-2a3.36,3.36,0,0,1,.844-1.416L13.35,3.92Zm0,0,1.97,1.97M14.2,11.023V14.57a1.68,1.68,0,0,1-1.68,1.68H4.68A1.68,1.68,0,0,1,3,14.57V6.73A1.68,1.68,0,0,1,4.68,5.05H8.227"
+        transform="translate(-2.5 -1.635)"
+        fill="none"
+        stroke="var(--color-svg-100)"
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+        strokeWidth="1"
       />
     </svg>
   );

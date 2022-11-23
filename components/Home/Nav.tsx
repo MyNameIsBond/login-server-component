@@ -19,7 +19,7 @@ export default function Nav() {
       </Link>
       <div className="flex items-center gap-x-4">
         <div
-          className="dark:bg-gray-50 bg-gray-900 rounded-md bg-opacity-5 dark:bg-opacity-5 hover:bg-opacity-20"
+          className="dark:bg-gray-50 bg-gray-900 rounded-md bg-opacity-5 dark:bg-opacity-5 hover:bg-opacity-20 cursor-pointer"
           onClick={addNote}
         >
           <AddBtn />

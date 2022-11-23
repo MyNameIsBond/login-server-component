@@ -17,21 +17,24 @@ export default function DeleteBtn({ id }: { id: string }) {
   };
   return (
     <button
-      className="border-2 border-red-500 hover:bg-red-500 hover:text-gray-50 text-red-500 py-1 px-4 rounded-full"
+      className="dark:bg-gray-50 bg-gray-900 rounded-md bg-opacity-5 dark:bg-opacity-5 hover:bg-opacity-20 cursor-pointer p-2"
       onClick={deleteNote}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-6 h-6"
+        width="11.856"
+        height="13.646"
+        viewBox="0 0 11.856 13.646"
       >
         <path
+          id="Path_910"
+          d="M10.877,6.627l-.224,5.836m-3.1,0L7.323,6.627m6.464-2.082c.222.034.442.069.663.108m-.663-.107-.693,9A1.459,1.459,0,0,1,11.639,14.9H6.561a1.459,1.459,0,0,1-1.455-1.347l-.693-9m9.374,0q-1.123-.17-2.255-.257M3.75,4.652c.22-.038.441-.074.663-.107m0,0q1.123-.17,2.255-.257m4.864,0V3.694a1.412,1.412,0,0,0-1.355-1.427q-1.076-.034-2.153,0A1.412,1.412,0,0,0,6.668,3.694v.594m4.864,0a31.56,31.56,0,0,0-4.864,0"
+          transform="translate(-3.172 -1.749)"
+          fill="none"
+          stroke="var(--color-svg-100)"
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+          strokeWidth="1"
         />
       </svg>
     </button>
