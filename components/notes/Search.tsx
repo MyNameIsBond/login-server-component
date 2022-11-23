@@ -13,8 +13,8 @@ export default function Search({ search, setSearch }: SearchProps) {
           viewBox="0 0 24 24"
           stroke="currentColor"
           strokeWidth="2"
-          height="16"
-          width="16"
+          height="14"
+          width="14"
           className="stroke-current text-gray-500 group-hover:text-gray-600 dark:text-neutral-500 dark:group-hover:text-neutral-50"
         >
           <path

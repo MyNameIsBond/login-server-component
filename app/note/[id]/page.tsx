@@ -18,10 +18,7 @@ export default function SearchNotes({ params }: { params: { id: string } }) {
 
   return (
     <div className="py-5 px-10 dark:bg-neutral-900  bg-gray-100  w-full">
-      <div className="flex flex-row justify-between my-8">
-        <h1 className="font-semibold text-3xl capitalize dark:text-neutral-50">
-          {title}
-        </h1>
+      <div className="">
         <div className="flex flex-row gap-x-3">
           <Link
             className="border-2 border-blue-500 hover:bg-blue-500 hover:text-gray-50 text-blue-500 py-1 px-4 rounded-full"
@@ -31,6 +28,11 @@ export default function SearchNotes({ params }: { params: { id: string } }) {
           </Link>
           <DeleteBtn id={id} />
         </div>
+      </div>
+      <div className="flex flex-row justify-between my-8">
+        <h1 className="font-semibold text-3xl capitalize dark:text-neutral-50">
+          {title}
+        </h1>
       </div>
       <div className="sticky overflow-y-scroll top-0">
         <div
