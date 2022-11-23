@@ -25,7 +25,9 @@ Code
 // code block
 \`\`\`\
 
-Horizontal Rule	---
+Horizontal Rule	
+
+---
 
 Link	[title](https://www.example.com)
 
