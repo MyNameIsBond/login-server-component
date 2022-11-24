@@ -10,7 +10,7 @@ export default function Nav() {
     router.push('/note/add');
   };
   return (
-    <nav className="flex items-center content-center justify-between w-full px-10 py-3 bg-gray-50 dark:bg-neutral-900 border-b dark:border-neutral-50 dark:border-opacity-10 sticky top-0 z-10">
+    <nav className="flex items-center content-center justify-between w-full px-10 py-3 bg-gray-50 dark:bg-neutral-900 border-b dark:border-neutral-50 dark:border-opacity-10 sticky top-0 z-20">
       <Link
         href="/"
         className="text-md font-semibold dark:text-neutral-200 text-gray-800"
