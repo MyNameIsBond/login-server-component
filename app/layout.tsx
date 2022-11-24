@@ -7,7 +7,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
     <html lang="en" className="bg-gray-100 overflow-y-auto">
       <body className="bg-gray-100 overflow-y-auto h-screen w-screen dark:bg-neutral-900">
         <Nav />
-        {children}
+        <>{children}</>
       </body>
     </html>
   );

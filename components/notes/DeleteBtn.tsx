@@ -1,5 +1,5 @@
 'use client';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function DeleteBtn({ id }: { id: string }) {
   const router = useRouter();
@@ -17,7 +17,7 @@ export default function DeleteBtn({ id }: { id: string }) {
   };
   return (
     <button
-      className="dark:bg-gray-50 bg-gray-900 rounded-md bg-opacity-5 dark:bg-opacity-5 hover:bg-opacity-20 cursor-pointer p-2"
+      className="dark:bg-gray-50 bg-gray-900 rounded-md bg-opacity-5 dark:bg-opacity-5 hover:bg-opacity-20 cursor-pointer p-2 backdrop-blur-md"
       onClick={deleteNote}
     >
       <svg

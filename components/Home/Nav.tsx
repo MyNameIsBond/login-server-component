@@ -5,9 +5,9 @@ import { useRouter } from 'next/navigation';
 import AddBtn from './AddBtn';
 
 export default function Nav() {
-  const e = useRouter();
+  const router = useRouter();
   const addNote = () => {
-    e.push('/note/add');
+    router.push('/note/add');
   };
   return (
     <nav className="flex items-center content-center justify-between w-full px-10 py-3 bg-gray-50 dark:bg-neutral-900 border-b dark:border-neutral-50 dark:border-opacity-10 sticky top-0 z-10">

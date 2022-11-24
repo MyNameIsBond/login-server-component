@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { use } from 'react';
 import DeleteBtn from '../../../components/notes/DeleteBtn';
 import EditBtn from '../../../components/notes/EditBtn';
+import NoteBar from '../../../components/notes/NoteBar';
 import { textToRemark } from '../../../utils/textToRemark';
 
 const fetchNote = async (id: string) => {
@@ -18,19 +19,9 @@ export default function SearchNotes({ params }: { params: { id: string } }) {
   const { title, data, created_at, content } = res;
 
   return (
-    <div className="float-right">
-      <div className="bg-gray-50">
-        <div className="flex flex-row gap-x-3 w-full">
-          <Link
-            className="dark:bg-gray-50 bg-gray-900 rounded-md bg-opacity-5 dark:bg-opacity-5 hover:bg-opacity-20 cursor-pointer p-2"
-            href={`/note/edit/${id}`}
-          >
-            <EditBtn />
-          </Link>
-          <DeleteBtn id={id} />
-        </div>
-      </div>
-      <div className="py-5 px-10 dark:bg-neutral-900 bg-gray-100 float-right">
+    <>
+      <NoteBar id={id} />
+      <div className="py-5 px-10 dark:bg-neutral-900 bg-gray-100">
         <div className="flex flex-row justify-between my-8">
           <h1 className="font-semibold text-3xl capitalize dark:text-neutral-50">
             {title}
@@ -43,6 +34,6 @@ export default function SearchNotes({ params }: { params: { id: string } }) {
           />
         </div>
       </div>
-    </div>
+    </>
   );
 }

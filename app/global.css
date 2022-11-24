@@ -13,3 +13,8 @@
     --color-svg-100: rgba(255, 255, 255, 0.288);
   }
 }
+
+[data-nextjs-scroll-focus-boundary] {
+  /* display: contents; */
+  width: 100%;
+}
