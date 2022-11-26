@@ -10,9 +10,8 @@ export default function MyTextArea({
   id?: string;
 }) {
   const [value, setValue] = useState<string>(data || '');
-  console.log('first', id);
 
-  const updateNote = ({ id, value }: { id: string; value: string }) => {
+  const updateNote = (id: string, value: string) => {
     fetch(`http://localhost:3000/api/note/update/${id}`, {
       method: 'PUT',
       headers: {
@@ -27,10 +26,7 @@ export default function MyTextArea({
     <div className="flex flex-row max-w-5xl h-fit">
       <textarea
         onChange={(e) => {
-          console.log('first', id);
           if (id) {
-            console.log('second');
-
             updateNote(id, e.target.value);
           }
           setValue(e.target.value);
