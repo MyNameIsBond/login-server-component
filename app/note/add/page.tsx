@@ -46,5 +46,9 @@ That is so funny! :joy:
 `;
 
 export default function Add({}) {
-  return <MyTextArea data={defaultData} />;
+  return (
+    <div>
+      <MyTextArea data={defaultData} save={true} />
+    </div>
+  );
 }

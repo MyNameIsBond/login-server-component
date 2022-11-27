@@ -14,11 +14,15 @@ export default function SearchNotes({ params }: { params: { id: string } }) {
   const { id } = params;
   const res = use(fetchNote(id));
   const { title, data, created_at, content } = res;
+  const ela = new Date(created_at).toDateString();
 
   return (
     <>
       <NoteBar id={id} />
       <div className="py-5 px-10 dark:bg-neutral-900 bg-gray-100">
+        <div className="flex flex-row justify-between my-8">
+          <span className="text-sm text-gray-900 text-opacity-60">{ela}</span>
+        </div>
         <div className="sticky overflow-y-scroll top-0">
           <div
             className="prose-sm dark:prose-invert prose max-w-md"
