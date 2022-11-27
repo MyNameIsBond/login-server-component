@@ -11,9 +11,11 @@ export default async function handler(
     if (req.method === 'POST') {
       const response = await supabase.from('notes').insert([{ data, title }]);
       const e = response;
-      console.log('RESPONSE', e);
+      console.log('RESPONSE from supabase', e);
+
       return res.status(200);
     }
+    return res.status(401);
   } catch (error) {
     console.error(error);
   }

@@ -13,10 +13,7 @@ export default async function handler(
         .from('notes')
         .delete()
         .eq('id', id);
-      res
-        .status(200)
-        .redirect('/note')
-        .json(data as []);
+      return res.status(201).redirect('/note').json(data);
     }
   } catch (error) {
     console.error(error);

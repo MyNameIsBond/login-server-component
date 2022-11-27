@@ -10,16 +10,18 @@ export default function DeleteBtn({ id }: { id: string }) {
         method: 'DELETE',
       }
     );
-    const res = await response.json();
-    console.log('first', res);
-    if (res.success) {
-      router.push('/note');
+    if (
+      response.status === 200 ||
+      response.status === 201 ||
+      response.redirected
+    ) {
+      router.push(response.url);
     }
   };
   return (
     <button
       className="dark:bg-gray-50 bg-gray-900 rounded-md bg-opacity-5 dark:bg-opacity-5 hover:bg-opacity-20 cursor-pointer p-2 backdrop-blur-md"
-      onClick={deleteNote}
+      onClick={(e) => deleteNote()}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
