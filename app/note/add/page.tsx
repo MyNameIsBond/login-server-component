@@ -1,7 +1,7 @@
 import MyTextArea from '../../../components/notes/edit/MyTextArea';
-const defaultData = `# H1
-## H2
-### H3
+const defaultData = `#H1
+##H2
+###H3
 Bold	
 **bold text**
 Italic	

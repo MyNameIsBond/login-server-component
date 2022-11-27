@@ -9,7 +9,6 @@ export default async function handler(
   const { title, data } = req.body;
   try {
     if (req.method === 'PUT') {
-      console.log('DATA:', req.body.data);
       const { data: response, error } = await supabase
         .from('notes')
         .update({ data, title })

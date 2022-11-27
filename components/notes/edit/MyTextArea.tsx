@@ -15,7 +15,6 @@ export default function MyTextArea({
 }) {
   const [value, setValue] = useState<string>(data || '');
   const [noteid, setNoteid] = useState<string>(id || '');
-  console.log('NOTE ID:', noteid);
   useEffect(() => {}, [value]);
   return (
     <>

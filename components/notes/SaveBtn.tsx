@@ -1,6 +1,19 @@
 'use client';
+import { useRouter } from 'next/navigation';
 
 export default function SaveBtn({ id, data }: { id: string; data: string }) {
+  const router = useRouter();
+  const saveNew = async () => {
+    const title = data.split(/\r?\n/)[0].replace('#', '');
+    const e = fetch('/api/note/new', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ data, title }),
+    });
+  };
+
   const updateNote = () => {
     const title = data.split(/\r?\n/)[0].replace('#', '');
     fetch(`http://localhost:3000/api/note/update/${id}`, {
@@ -14,7 +27,11 @@ export default function SaveBtn({ id, data }: { id: string; data: string }) {
   return (
     <div
       onClick={(e) => {
-        updateNote();
+        if (id === '' || id === undefined || id === null) {
+          saveNew();
+        } else {
+          updateNote();
+        }
       }}
       className="dark:bg-gray-50 bg-gray-900 rounded-md bg-opacity-5 dark:bg-opacity-5 hover:bg-opacity-20 cursor-pointer p-2 backdrop-blur-md"
     >

@@ -11,6 +11,7 @@ export default function DeleteBtn({ id }: { id: string }) {
       }
     );
     const res = await response.json();
+    console.log('first', res);
     if (res.success) {
       router.push('/note');
     }

@@ -8,7 +8,7 @@ const fetcher = async () => {
 
 const datafech = fetcher();
 
-export default function SideNotes({ search }: { search: string }) {
+export default function SideNotes() {
   const notes = use(datafech);
   return (
     <div className="p-5 flex flex-col gap-y-5">

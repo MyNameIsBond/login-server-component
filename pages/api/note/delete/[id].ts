@@ -13,7 +13,6 @@ export default async function handler(
         .from('notes')
         .delete()
         .eq('id', id);
-      console.log('ELARE:', data);
       res
         .status(200)
         .redirect('/note')

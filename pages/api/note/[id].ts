@@ -1,9 +1,17 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { supabase } from '../../../utils/supabaseclient';
+// interface for note
+interface Note {
+  id: number;
+  data: string;
+  title: string;
+  user?: string;
+  created_at?: string;
+}
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<[]>
+  res: NextApiResponse<Note[] | null>
 ) {
   const { data: notes, error } = await supabase.from('notes').select('*');
   const { id } = req.query;
@@ -14,7 +22,7 @@ export default async function handler(
         .select('*')
         .eq('id', id);
       // TODO: add note TS type
-      res.status(200).json(note);
+      return res.status(200).json(note);
     }
   } catch (error) {
     console.error(error);
