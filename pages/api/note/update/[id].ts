@@ -6,14 +6,18 @@ export default async function handler(
   res: NextApiResponse<[]>
 ) {
   const { id } = req.query;
+  const { title, data } = req.body;
   try {
     if (req.method === 'PUT') {
-      const { data, error } = await supabase
+      console.log('DATA:', req.body.data);
+      const { data: response, error } = await supabase
         .from('notes')
-        .update({ data: req.body })
+        .update({ data, title })
         .eq('id', id);
       return res.status(200);
     }
+
+    return res.status(401);
   } catch (error) {
     console.error(error);
   }

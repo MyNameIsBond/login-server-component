@@ -17,7 +17,7 @@ export default async function handler(
       } = await supabase
         .from('notes')
         .select('*')
-        .textSearch('title', string as string);
+        .textSearch('data', string as string, { type: 'plain' });
       if (status === 400) {
         res.status(200).json({ error: statusText });
       } else {

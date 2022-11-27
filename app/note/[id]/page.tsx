@@ -1,7 +1,4 @@
-import Link from 'next/link';
 import { use } from 'react';
-import DeleteBtn from '../../../components/notes/DeleteBtn';
-import EditBtn from '../../../components/notes/EditBtn';
 import NoteBar from '../../../components/notes/NoteBar';
 import { textToRemark } from '../../../utils/textToRemark';
 
@@ -22,11 +19,6 @@ export default function SearchNotes({ params }: { params: { id: string } }) {
     <>
       <NoteBar id={id} />
       <div className="py-5 px-10 dark:bg-neutral-900 bg-gray-100">
-        <div className="flex flex-row justify-between my-8">
-          <h1 className="font-semibold text-3xl capitalize dark:text-neutral-50">
-            {title}
-          </h1>
-        </div>
         <div className="sticky overflow-y-scroll top-0">
           <div
             className="prose-sm dark:prose-invert prose max-w-md"

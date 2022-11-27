@@ -17,7 +17,7 @@ export default function SearchNotes({ params }: { params: { id: string } }) {
 
   return (
     <div className="h-full w-full dark:bg-neutral-900">
-      <MyTextArea data={data} id={id} />
+      <MyTextArea data={data} id={id} save={true} />
     </div>
   );
 }
