@@ -5,24 +5,12 @@ import Search from './Search';
 import SearchNotes from './SearchNotes';
 import { supabase } from '../../utils/supabaseclient';
 
-export default function SideBar({}: {}) {
+export default async function SideBar({}: {}) {
   const [search, setSearch] = useState<string>('');
   const [notes, setNotes] = useState<any>([]);
 
   // listen to notes changes
-  useEffect(() => {
-    const notes = supabase
-      .channel('custom-insert-channel')
-      .on(
-        'postgres_changes',
-        { event: '*', schema: 'public', table: 'notes' },
-        (payload) => {
-          console.log('Change received!', payload);
-          setNotes(payload.new);
-        }
-      )
-      .subscribe();
-  }, [notes]);
+  useEffect(() => {}, [notes]);
 
   return (
     <div className="flex flex-col border-r dark:border-neutral-50 dark:border-opacity-10 bg-gray-50 dark:bg-neutral-900 dark:text-neutral-100 sticky top-0 overflow-y-scroll h-screen w-96">
